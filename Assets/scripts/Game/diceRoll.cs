@@ -13,6 +13,7 @@ public class diceRoll : MonoBehaviour
     public static TextMeshPro objTextMesh;
 
     public CanvasGroup aufgabe;
+    public CanvasGroup finishCanvas;
 
     public static int Player1Pos = 1;
     public GameObject player1;
@@ -171,25 +172,23 @@ public class diceRoll : MonoBehaviour
             Vector3 startingPos = move.getObj().transform.position;
             
 
-            if(curPos < 9 && nextPos >= 9 && nextPos < 12){
+            if(curPos <= 9 && nextPos >= 9){
                 if(move.getRichtung() == 2){
                     move.getObj().transform.Rotate(0, -90.0f, 0, Space.Self);
                 }
             }
 
-            if(curPos < 12 && nextPos >= 12 && nextPos < 20){
+            if(curPos <= 12 && nextPos >= 12){
                 if(move.getRichtung() == 3){
                     move.getObj().transform.Rotate(0, -90, 0, Space.Self);
                 }    
             }
             
-            if(curPos < 20 && nextPos >= 20 && nextPos < 23){
+            if(curPos <= 20 && nextPos >= 20){
                 if(move.getRichtung() == 4){
                     move.getObj().transform.Rotate(0, -90, 0, Space.Self);
                 }
-            }
-
-            
+            }            
 
             while (elapsedTime < seconds)
             {
@@ -198,7 +197,19 @@ public class diceRoll : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
             move.getObj().transform.position = move.getVector();
+
         }
+
+        if(nextPos>20){
+            aufgabe.alpha = 0;
+            aufgabe.blocksRaycasts = false;
+            finishCanvas.alpha = 1;
+        }else{
+            nextPlayer();
+            
+            showAufgabe();
+        }
+
     }
 
     public IEnumerator MoveCameraOverSeconds (Vector3 end, float seconds){
@@ -211,10 +222,6 @@ public class diceRoll : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         Camera.main.transform.position = end;
-
-        nextPlayer();
-        
-        showAufgabe();
         
     }
 

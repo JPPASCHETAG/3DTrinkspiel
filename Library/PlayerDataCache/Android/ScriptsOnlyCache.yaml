@@ -16,6 +16,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshPro
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -24,6 +25,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
@@ -56,25 +58,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1502}
+      Script: {instanceID: 4510}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 4524}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 4846}
     - Class: 114
-      Script: {instanceID: 1868}
+      Script: {instanceID: 4870}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 2238}
+      Script: {instanceID: 5234}
     - Class: 114
-      Script: {instanceID: 2834}
+      Script: {instanceID: 5636}
     - Class: 114
-      Script: {instanceID: 3066}
+      Script: {instanceID: 5820}
     - Class: 114
-      Script: {instanceID: 3390}
+      Script: {instanceID: 5870}
     - Class: 114
-      Script: {instanceID: 3528}
+      Script: {instanceID: 6046}
+    - Class: 114
+      Script: {instanceID: 6370}
+    - Class: 114
+      Script: {instanceID: 6508}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -123,25 +129,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 4846}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 2220}
+      Script: {instanceID: 5220}
     - Class: 114
-      Script: {instanceID: 2542}
+      Script: {instanceID: 5530}
     - Class: 114
-      Script: {instanceID: 2692}
+      Script: {instanceID: 5680}
     - Class: 114
-      Script: {instanceID: 2758}
+      Script: {instanceID: 5744}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 5810}
     - Class: 114
-      Script: {instanceID: 3044}
+      Script: {instanceID: 6026}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 6106}
     - Class: 114
-      Script: {instanceID: 3214}
+      Script: {instanceID: 6194}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -163,7 +169,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 12a4bb99a039d6602fc689d5674bed01
+      Hash: 0dedf050e785aa81d4dbcab58f1a6838
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: diceRoll
@@ -313,7 +319,7 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: 14324228b0502f1af3d3fc028b6743fd
+      Hash: 88aa0404e03b7e9bde2d7aae0e53c326
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CanvasAufgabe

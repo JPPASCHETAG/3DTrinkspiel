@@ -6,7 +6,8 @@ using UnityEngine;
 public class CanvasAufgabe : MonoBehaviour
 {
     public CanvasGroup aufgabe;
-    
+    public CanvasGroup finish;
+
     public void closeAufgabe(){
 
         aufgabe.alpha = 0;
@@ -47,6 +48,14 @@ public class CanvasAufgabe : MonoBehaviour
             newRollPos += new Vector3(-5,0,-8);
             diceRoll.objTextMesh.transform.position = newRollPos;
         }
+    }
+
+
+    public void startNewRound(){
+
+        finish.alpha = 0;
+        Loader.Load(Loader.Scene.StartScene);
+
     }
 
     
