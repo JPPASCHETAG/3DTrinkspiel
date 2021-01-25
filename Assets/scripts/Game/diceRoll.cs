@@ -15,19 +15,19 @@ public class diceRoll : MonoBehaviour
     public CanvasGroup aufgabe;
     public CanvasGroup finishCanvas;
 
-    public static int Player1Pos = 1;
+    public static int Player1Pos = 0;
     public GameObject player1;
     public static GameObject objPlayer1;
 
-    public static int Player2Pos = 1;
+    public static int Player2Pos = 0;
     public GameObject player2;
     public static GameObject objPlayer2;
 
-    public static int Player3Pos = 1;
+    public static int Player3Pos = 0;
     public GameObject player3;
     public static GameObject objPlayer3;
 
-    public static int Player4Pos = 1;
+    public static int Player4Pos = 0;
     public GameObject player4;
     public static GameObject objPlayer4;
 
@@ -45,7 +45,8 @@ public class diceRoll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(GameSettings.getNumOfPlayer());
+        roll=true;
+
         TotalPlayers = GameSettings.getNumOfPlayer();
         currentPlayer = 1;
 
@@ -55,6 +56,11 @@ public class diceRoll : MonoBehaviour
         objPlayer2 = player2;
         objPlayer3 = player3;
         objPlayer4 = player4;
+
+        Player1Pos = 0;
+        Player2Pos = 0;
+        Player3Pos = 0;
+        Player4Pos = 0;
 
     }
 
@@ -66,6 +72,7 @@ public class diceRoll : MonoBehaviour
             int rnd = UnityEngine.Random.Range(1, 6);
             textMeshPro.text = rnd.ToString();
         }
+
     }
 
     void OnMouseDown() {
@@ -77,155 +84,108 @@ public class diceRoll : MonoBehaviour
 
             GameObject player = null;
             int PlayerPos = 0;
+            int oldPos = 0;
             switch(currentPlayer){
                 case 1:
                     player = player1;
+                    oldPos = Player1Pos;
                     Player1Pos += intRolled;
                     PlayerPos = Player1Pos;
                     break;
                 case 2:
                     player = player2;
+                    oldPos = Player2Pos;
                     Player2Pos += intRolled;
                     PlayerPos = Player2Pos;
                     break;
                 case 3:
                     player = player3;
+                    oldPos = Player3Pos;
                     Player3Pos += intRolled;
                     PlayerPos = Player3Pos;
                     break;
                 case 4:
                     player = player4;
+                    oldPos = Player4Pos;
                     Player4Pos += intRolled;
                     PlayerPos = Player4Pos;
                     break;
 
+            }       
+        
+            if(PlayerPos>21){
+                //StartCoroutine (MoveOverSeconds (oldPos,PlayerPos,player));
+                aufgabe.alpha = 0;
+                aufgabe.blocksRaycasts = false;
+                finishCanvas.alpha = 1;
+            }else{        
+                StartCoroutine (MoveOverSeconds (oldPos,PlayerPos,player));
+                StartCoroutine (MoveCameraOverSeconds (oldPos,PlayerPos));
             }
-
-            //Camera und Player Movement
-            //aktuelle Position
-
-            Vector3 nextPos = player.transform.position;
-            Vector3 CameraPos = Camera.main.transform.position;
-
-            List<Movement> nextTurn = getPlayerMovement(PlayerPos,intRolled);
-
-
-            for(int j=0;j<nextTurn.Count;j++){
-                
-                Movement move = nextTurn[j];
-                move.setObjekt(player);
-
-                int richtung = move.getRichtung();
-                int schritte = move.getSteps();
-
-                switch(richtung){
-                    //z positiv
-                    case 1:
-                        for(int i=0;i<schritte;i++){        
-                            nextPos += new Vector3(0, 0, 5.1f);
-                            CameraPos += new Vector3(0, 0, 5.1f);
-                        }
-                        break;
-                    //x positiv
-                    case 2:
-                        for(int i=0;i<schritte;i++){        
-                            nextPos += new Vector3(-4.3f, 0, 0);
-                            CameraPos += new Vector3(-4.3f, 0, 0);
-                        }
-                        break;
-                    //z negativ
-                    case 3:
-                        for(int i=0;i<schritte;i++){        
-                            nextPos += new Vector3(0, 0, -5);
-                            CameraPos += new Vector3(0, 0, -5);
-                        }
-                        break;
-                    //x positiv
-                    case 4:
-                        for(int i=0;i<schritte;i++){        
-                            nextPos += new Vector3(5, 0, 0);
-                            CameraPos += new Vector3(5, 0, 0);
-                        }
-                        break;
-                }
-
-                move.setNextPos(nextPos);
-
-            }
-
-            StartCoroutine (MoveOverSeconds (nextTurn,PlayerPos,intRolled));
-            StartCoroutine (MoveCameraOverSeconds (CameraPos , 1.5f));
-                    
 
         }
 
     }
 
-    public IEnumerator MoveOverSeconds (List<Movement> liste, int nextPos,int rolled){
+    IEnumerator MoveOverSeconds (int curPos,int nxtPos, GameObject player){
 
-        int curPos = nextPos-rolled;
+        if(curPos < nxtPos){
 
-        for(int j=0;j<liste.Count;j++){
-            Movement move = liste[j];
-            float seconds = 1.5f;
+            Movement move = getPlayerMovement(curPos);
+
+            curPos++; 
+            float seconds = 0.5f;
             float elapsedTime = 0;
-            Vector3 startingPos = move.getObj().transform.position;
-            
-
-            if(curPos <= 9 && nextPos >= 9){
-                if(move.getRichtung() == 2){
-                    move.getObj().transform.Rotate(0, -90.0f, 0, Space.Self);
-                }
-            }
-
-            if(curPos <= 12 && nextPos >= 12){
-                if(move.getRichtung() == 3){
-                    move.getObj().transform.Rotate(0, -90, 0, Space.Self);
-                }    
-            }
-            
-            if(curPos <= 20 && nextPos >= 20){
-                if(move.getRichtung() == 4){
-                    move.getObj().transform.Rotate(0, -90, 0, Space.Self);
-                }
-            }            
+            Vector3 startingPos = player.transform.position;       
 
             while (elapsedTime < seconds)
             {
-                move.getObj().transform.position = Vector3.Lerp(startingPos, move.getVector(), (elapsedTime / seconds));
+                player.transform.position = Vector3.Lerp(startingPos, move.getVector(), (elapsedTime / seconds));
                 elapsedTime += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
-            move.getObj().transform.position = move.getVector();
+            player.transform.position = move.getVector();  
 
-        }
-
-        if(nextPos>20){
-            aufgabe.alpha = 0;
-            aufgabe.blocksRaycasts = false;
-            finishCanvas.alpha = 1;
-        }else{
-            nextPlayer();
-            
-            showAufgabe();
+            if(move.getTurn()){
+                //hier dann noch turnen wenn nötig
+                player.transform.Rotate(0, move.getRotation(), 0);
+            }
+        
+            StartCoroutine (MoveOverSeconds (curPos,nxtPos,player));
+            if(curPos == nxtPos){
+                yield return new WaitForSeconds(0.7f);
+                nextPlayer();    
+                showAufgabe();
+            }   
         }
 
     }
 
-    public IEnumerator MoveCameraOverSeconds (Vector3 end, float seconds){
-        float elapsedTime = 0;
-        Vector3 startingPos = Camera.main.transform.position;
-        while (elapsedTime < seconds)
-        {
-            Camera.main.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
-            elapsedTime += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+    IEnumerator MoveCameraOverSeconds (int curPos,int nxtPos){
+
+        if(curPos < nxtPos){
+            Movement move = getPlayerMovement(curPos);
+            curPos++;
+
+            Vector3 end = move.getVector();
+            Vector3 offset = new Vector3(-52,47,0);
+            end = end+offset;
+            float seconds = 0.5f;
+            float elapsedTime = 0;
+            Vector3 startingPos = Camera.main.transform.position;
+            while (elapsedTime < seconds)
+            {
+                Camera.main.transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+                elapsedTime += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            Camera.main.transform.position = end;
+            StartCoroutine (MoveCameraOverSeconds (curPos,nxtPos));
         }
-        Camera.main.transform.position = end;
         
     }
 
-    public void nextPlayer(){
+    void nextPlayer(){
         if(currentPlayer < TotalPlayers){
             currentPlayer++;
         }else{
@@ -233,7 +193,7 @@ public class diceRoll : MonoBehaviour
         }
     }
 
-    public void showAufgabe(){
+    void showAufgabe(){
         
         Aufgabe aufgaben = new AufgabenGenerator().getRandomAufgabe();
         //Titel und Message setzen
@@ -247,87 +207,45 @@ public class diceRoll : MonoBehaviour
 
     }
 
-    public List<Movement> getPlayerMovement(int nextPos, int rolled){
+    Movement getPlayerMovement(int field){
 
-        List<Movement> returnList = new List<Movement>();
+        Movement returnMovement;
 
-        int curPos = nextPos-rolled;
-
-        while(rolled > 0){
-
-            if(nextPos <9){
-
-                returnList.Add(new Movement(rolled, 1));
-                rolled = 0;
-
-            }else if(nextPos >= 9 && curPos < 9){
-
-                int stepsToTurn = 9-curPos;
-
-                returnList.Add(new Movement(stepsToTurn, 1));
-
-                rolled = rolled-stepsToTurn;
-                curPos = curPos+stepsToTurn;
-
-            }else if(nextPos > 9 && nextPos < 12 ){
-
-                returnList.Add(new Movement(rolled, 2));
-                rolled = 0;
-
-            }else if(nextPos >= 12 && curPos < 12){
-
-                int stepsToTurn = 12-curPos;
-
-                returnList.Add(new Movement(stepsToTurn, 2));
-
-                rolled = rolled-stepsToTurn;
-                curPos = curPos+stepsToTurn;
-
-            }else if(nextPos >= 13 && nextPos < 20){
-
-                returnList.Add(new Movement(rolled, 3));
-                rolled = 0;
-
-            }else if(nextPos >= 20 && curPos < 20){
-                 int stepsToTurn = 20-curPos;
-
-                returnList.Add(new Movement(stepsToTurn, 3));
-
-                rolled = rolled-stepsToTurn;
-                curPos = curPos+stepsToTurn;
-            }else if(nextPos > 20 && nextPos < 22){
-
-                returnList.Add(new Movement(rolled, 4));
-                rolled = 0;
-
-            }else if(nextPos >= 22){
-                rolled=0;
-                Movement mv = new Movement(0, 4);
-                mv.setNextPos(new Vector3(-465,1,0));
-                returnList.Add(mv);
-            }
-
+        //MapID holen
+        
+        map Map = new map();
+        if(field >= Map.map1.Count){
+            returnMovement = Map.map1[Map.map1.Count-1];
+        }else{
+            returnMovement = Map.map1[field];
         }
+        
+        
 
-
-        return returnList;
+        return returnMovement;
     }
 
 }
 
-
-
-
-
-
-
-
 public class Movement{
 
+    ////////////////////
     private int steps;
     private int richtung;
+    ////////////////////
+
+
     private GameObject player;
     private Vector3 nextPos;
+    private bool turn;
+    private int turnDir;
+
+
+    public Movement(bool bolturn,int turnDirection,Vector3 pos){
+        turn = bolturn;
+        turnDir = turnDirection;
+        nextPos = pos;
+    }
 
     public void setObjekt(GameObject obj){
         player = obj;
@@ -358,6 +276,11 @@ public class Movement{
         return nextPos;
     }
 
+    public bool getTurn(){
+        return turn;
+    }
+
+    public int getRotation(){
+        return turnDir;
+    }
 }
-
-

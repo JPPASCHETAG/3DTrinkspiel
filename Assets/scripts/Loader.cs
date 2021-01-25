@@ -9,7 +9,8 @@ public static class Loader
     public enum Scene{
         
         GameScene,
-        StartScene
+        StartScene,
+        Pferderennen
 
     }
 

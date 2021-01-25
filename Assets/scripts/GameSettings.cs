@@ -14,6 +14,14 @@ public static class GameSettings
     }
 
 
+    public static int getMapID(){
+        return PlayerPrefs.GetInt("MAP_ID");
+    }
+
+    public static void setMapID(int id){
+        PlayerPrefs.SetInt("MAP_ID", id);
+    }
+
 
 
 }

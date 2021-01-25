@@ -58,29 +58,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 1502}
     - Class: 114
-      Script: {instanceID: 4524}
+      Script: {instanceID: 1516}
     - Class: 114
-      Script: {instanceID: 4846}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 4870}
+      Script: {instanceID: 1868}
     - Class: 114
-      Script: {instanceID: 4894}
+      Script: {instanceID: 1892}
     - Class: 114
-      Script: {instanceID: 5234}
+      Script: {instanceID: 2238}
     - Class: 114
-      Script: {instanceID: 5636}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 5820}
+      Script: {instanceID: 2836}
     - Class: 114
-      Script: {instanceID: 5870}
+      Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 6046}
+      Script: {instanceID: 3068}
     - Class: 114
-      Script: {instanceID: 6370}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 6508}
+      Script: {instanceID: 3530}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,25 +129,25 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 4846}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 4894}
+      Script: {instanceID: 1892}
     - Class: 114
-      Script: {instanceID: 5220}
+      Script: {instanceID: 2220}
     - Class: 114
-      Script: {instanceID: 5530}
+      Script: {instanceID: 2544}
     - Class: 114
-      Script: {instanceID: 5680}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 5744}
+      Script: {instanceID: 2760}
     - Class: 114
-      Script: {instanceID: 5810}
+      Script: {instanceID: 2826}
     - Class: 114
-      Script: {instanceID: 6026}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 6194}
+      Script: {instanceID: 3216}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -443,6 +443,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnvMapAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 83e769eee07fc231384c812eedbb8224
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: race
   - hash:
       serializedVersion: 2
       Hash: bd3f0ca738703903e759f77536ed74fd
@@ -831,4 +837,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/GameScene.unity
-  playerPath: C:/Users/julia/Desktop/Spiel2.apk
+  playerPath: C:/Users/julia/Desktop/Spiel.apk

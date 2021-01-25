@@ -41,7 +41,7 @@ public class CanvasAufgabe : MonoBehaviour
             Camera.main.transform.position = new Vector3(-517,47,2);
         }else{
             Vector3 newCamPos = playerObject.transform.position;
-            newCamPos += new Vector3(-52,46,2);
+            newCamPos += new Vector3(-52,47,0);
             Camera.main.transform.position = newCamPos;
 
             Vector3 newRollPos = playerObject.transform.position;

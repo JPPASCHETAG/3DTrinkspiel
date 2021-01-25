@@ -243,13 +243,26 @@ public class AufgabenGenerator{
 
     public Aufgabe getRandomAufgabe(){
 
-        int rnd = UnityEngine.Random.Range(0, list.Count);
+        int aufgabenTyp = UnityEngine.Random.Range(1, 4);
 
-        return list[rnd];
+        if(aufgabenTyp < 1 || aufgabenTyp > 3){
+            aufgabenTyp = 2;
+        }
 
+        switch(aufgabenTyp){
+            case 1:
+                int rnd = UnityEngine.Random.Range(0, list.Count);
+                return list[rnd];
+            case 2:
+                int schluck = UnityEngine.Random.Range(1, 10);
+                string msg = "Du musst trinken! \n Trinke " + schluck + " Schluck.";
+                return new Aufgabe("Trink!",msg,1);
+            case 3:
+                return new Aufgabe("Spiel","Minispiele werden noch implementiert...",1);
+            default:
+                return new Aufgabe("Trink!","Trink 3 Schluck",1);
+        }
     }
-
-
 
 }
 
