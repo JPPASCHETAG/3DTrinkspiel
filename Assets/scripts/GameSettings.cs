@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class GameSettings
 {
+    private static List<Movement> map;
+    private static int drinkMode;
 
     public static int getNumOfPlayer(){
         return PlayerPrefs.GetInt("players");
@@ -22,6 +24,13 @@ public static class GameSettings
         PlayerPrefs.SetInt("MAP_ID", id);
     }
 
+    public static int getdrinkMode()
+    {
+        return drinkMode;
+    }
 
-
+    public static void setdrinkMode(int mode)
+    {
+        drinkMode = mode;
+    }
 }

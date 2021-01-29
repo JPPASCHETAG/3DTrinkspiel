@@ -3,7 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CanvasAufgabe
     - Einstellungen
+    - LowPolyWater.LowPolyWater
     - addPlayer
+    - changeMapDown
+    - changeMapUp
+    - changeModeDown
+    - changeModeUp
     - diceRoll
     - removePlayer
     - startgame
@@ -58,29 +63,171 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1502}
+      Script: {instanceID: 1508}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1852}
     - Class: 114
-      Script: {instanceID: 1868}
+      Script: {instanceID: 1878}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 1902}
     - Class: 114
-      Script: {instanceID: 2238}
+      Script: {instanceID: 2248}
     - Class: 114
-      Script: {instanceID: 2650}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2836}
+      Script: {instanceID: 2850}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2906}
     - Class: 114
-      Script: {instanceID: 3068}
+      Script: {instanceID: 3086}
     - Class: 114
-      Script: {instanceID: 3392}
+      Script: {instanceID: 3410}
     - Class: 114
-      Script: {instanceID: 3530}
+      Script: {instanceID: 3548}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/Map2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1508}
+    - Class: 114
+      Script: {instanceID: 1522}
+    - Class: 114
+      Script: {instanceID: 1550}
+    - Class: 114
+      Script: {instanceID: 1852}
+    - Class: 114
+      Script: {instanceID: 1878}
+    - Class: 114
+      Script: {instanceID: 1902}
+    - Class: 114
+      Script: {instanceID: 2248}
+    - Class: 114
+      Script: {instanceID: 2664}
+    - Class: 114
+      Script: {instanceID: 2850}
+    - Class: 114
+      Script: {instanceID: 2906}
+    - Class: 114
+      Script: {instanceID: 3086}
+    - Class: 114
+      Script: {instanceID: 3410}
+    - Class: 114
+      Script: {instanceID: 3548}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/Map3.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1508}
+    - Class: 114
+      Script: {instanceID: 1522}
+    - Class: 114
+      Script: {instanceID: 1550}
+    - Class: 114
+      Script: {instanceID: 1852}
+    - Class: 114
+      Script: {instanceID: 1878}
+    - Class: 114
+      Script: {instanceID: 1902}
+    - Class: 114
+      Script: {instanceID: 2248}
+    - Class: 114
+      Script: {instanceID: 2664}
+    - Class: 114
+      Script: {instanceID: 2850}
+    - Class: 114
+      Script: {instanceID: 2906}
+    - Class: 114
+      Script: {instanceID: 3086}
+    - Class: 114
+      Script: {instanceID: 3410}
+    - Class: 114
+      Script: {instanceID: 3548}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -129,25 +276,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1852}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 1902}
     - Class: 114
-      Script: {instanceID: 2220}
+      Script: {instanceID: 2230}
     - Class: 114
-      Script: {instanceID: 2544}
+      Script: {instanceID: 2558}
     - Class: 114
-      Script: {instanceID: 2694}
+      Script: {instanceID: 2708}
     - Class: 114
-      Script: {instanceID: 2760}
+      Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 2826}
+      Script: {instanceID: 2840}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 3064}
     - Class: 114
-      Script: {instanceID: 3128}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3216}
+      Script: {instanceID: 3234}
+    - Class: 114
+      Script: {instanceID: 202194}
+    - Class: 114
+      Script: {instanceID: 202202}
+    - Class: 114
+      Script: {instanceID: 214492}
+    - Class: 114
+      Script: {instanceID: 214494}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -193,6 +348,12 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: 7c5084f22bda962db730d7217e88651b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: LowPolyWater
+    className: LowPolyWater
+  - hash:
+      serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -215,6 +376,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: e1152d0f03058afa2e0596c48aa383eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: test
   - hash:
       serializedVersion: 2
       Hash: bcaee4c2a83047257b5f47d6ed264b75
@@ -445,7 +612,7 @@ ScriptsOnlyBuild:
     className: EnvMapAnimator
   - hash:
       serializedVersion: 2
-      Hash: 83e769eee07fc231384c812eedbb8224
+      Hash: 1c470bc51faa184a19f0dabf5daebd31
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: race
@@ -565,7 +732,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: cc875b48a9a5c7664e5e107d4fe7fd75
+      Hash: 37cd053d3b08d1e80a043873e6e15807
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: startgame
@@ -833,8 +1000,34 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 59eafa69cbee78e200799bbdb8bfa6bd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeModeUp
+  - hash:
+      serializedVersion: 2
+      Hash: 65876cdfc62c2be351e3ca8c22725c21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeModeDown
+  - hash:
+      serializedVersion: 2
+      Hash: 65876cdfc62c2be351e3ca8c22725c21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeMapUp
+  - hash:
+      serializedVersion: 2
+      Hash: 65876cdfc62c2be351e3ca8c22725c21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeMapDown
   platform: 13
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/GameScene.unity
+  - Assets/Scenes/Map2.unity
+  - Assets/Scenes/Map3.unity
   playerPath: C:/Users/julia/Desktop/Spiel.apk

@@ -254,7 +254,16 @@ public class AufgabenGenerator{
                 int rnd = UnityEngine.Random.Range(0, list.Count);
                 return list[rnd];
             case 2:
-                int schluck = UnityEngine.Random.Range(1, 10);
+                double schluck = UnityEngine.Random.Range(1, 10);
+                if(GameSettings.getdrinkMode() == 1)
+				{
+                    schluck = 0.5 * schluck;
+				}
+                if (GameSettings.getdrinkMode() == 2)
+                {
+                    schluck = 2 * schluck;
+                }
+
                 string msg = "Du musst trinken! \n Trinke " + schluck + " Schluck.";
                 return new Aufgabe("Trink!",msg,1);
             case 3:

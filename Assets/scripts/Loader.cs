@@ -10,7 +10,9 @@ public static class Loader
         
         GameScene,
         StartScene,
-        Pferderennen
+        Pferderennen,
+        Map2,
+        Map3
 
     }
 

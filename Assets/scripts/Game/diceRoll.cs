@@ -111,14 +111,16 @@ public class diceRoll : MonoBehaviour
                     PlayerPos = Player4Pos;
                     break;
 
-            }       
-        
-            if(PlayerPos>21){
+            }
+
+            map Map = new map();
+            if (PlayerPos >= Map.getMap(GameSettings.getMapID()).Count)
+            {
                 //StartCoroutine (MoveOverSeconds (oldPos,PlayerPos,player));
                 aufgabe.alpha = 0;
                 aufgabe.blocksRaycasts = false;
                 finishCanvas.alpha = 1;
-            }else{        
+            }else{
                 StartCoroutine (MoveOverSeconds (oldPos,PlayerPos,player));
                 StartCoroutine (MoveCameraOverSeconds (oldPos,PlayerPos));
             }
@@ -128,6 +130,7 @@ public class diceRoll : MonoBehaviour
     }
 
     IEnumerator MoveOverSeconds (int curPos,int nxtPos, GameObject player){
+
 
         if(curPos < nxtPos){
 
@@ -168,7 +171,10 @@ public class diceRoll : MonoBehaviour
             curPos++;
 
             Vector3 end = move.getVector();
-            Vector3 offset = new Vector3(-52,47,0);
+            //Vector3 offset = new Vector3(-52,47,0); test Map
+
+            //MAp 2
+            Vector3 offset = new Vector3(5,14.5f ,-8.5f);
             end = end+offset;
             float seconds = 0.5f;
             float elapsedTime = 0;
@@ -214,10 +220,12 @@ public class diceRoll : MonoBehaviour
         //MapID holen
         
         map Map = new map();
-        if(field >= Map.map1.Count){
-            returnMovement = Map.map1[Map.map1.Count-1];
+        List<Movement> map = Map.getMap(GameSettings.getMapID());
+
+        if (field >= map.Count){
+            returnMovement = map[map.Count-1];
         }else{
-            returnMovement = Map.map1[field];
+            returnMovement = map[field];
         }
         
         
