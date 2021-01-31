@@ -40,12 +40,23 @@ public class diceRoll : MonoBehaviour
     private int TotalPlayers;
     public static int currentPlayer;
 
+    //public Text PlayerTag1;
+    public TextMeshProUGUI PlayerTag1; 
+    public TextMeshProUGUI PlayerTag2; 
+    public TextMeshProUGUI PlayerTag3; 
+    public TextMeshProUGUI PlayerTag4; 
+
    
 
     // Start is called before the first frame update
     void Start()
     {
         roll=true;
+
+        PlayerTag1.text = GameSettings.getPlayer1name();
+        PlayerTag2.text = GameSettings.getPlayer2name();
+        PlayerTag3.text = GameSettings.getPlayer3name();
+        PlayerTag4.text = GameSettings.getPlayer4name();
 
         TotalPlayers = GameSettings.getNumOfPlayer();
         currentPlayer = 1;

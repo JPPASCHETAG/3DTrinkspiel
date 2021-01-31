@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
+
 
 public class startgame : MonoBehaviour
 {
     public TextMeshPro textMeshPro;
     public TextMeshPro DrinkMode;
     public TextMeshPro MapName;
-   
+
+    public InputField PlayerName1;
+    public InputField PlayerName2;
+    public InputField PlayerName3;
+    public InputField PlayerName4;
 
     void OnMouseDown(){
         
@@ -53,6 +59,11 @@ public class startgame : MonoBehaviour
                 break;
         }
 
+        GameSettings.setPlayer1name(PlayerName1.text);
+        GameSettings.setPlayer2name(PlayerName2.text);
+        GameSettings.setPlayer3name(PlayerName3.text);
+        GameSettings.setPlayer4name(PlayerName4.text);
+        
     }
     
 }
