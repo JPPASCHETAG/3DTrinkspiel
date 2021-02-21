@@ -9,7 +9,7 @@ public class changeMapDown : MonoBehaviour
 
 	private string[] drinkMode =
 	{
-		"Strand",
+		//"Strand",
 		"Insel"
 	};
 
