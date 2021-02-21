@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map3.unity
     guid: 2a6187e67b4afba438dc88902b41f80e
+  - enabled: 1
+    path: Assets/Scenes/Pferderennen.unity
+    guid: a6f935e7d8e751a4584b7e03add0192f
   m_configObjects: {}

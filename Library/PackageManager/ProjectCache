@@ -5,15 +5,15 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637477640304091197
-    m_Hash: 774091705
+      ticks: 637494923701157064
+    m_Hash: 1902226770
   m_LockFileStatus:
     m_FilePath: C:/UnityProjekts/3DTrinkspiel/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637477640326367530
+      ticks: 637494924536862513
     m_Hash: 3936456481
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

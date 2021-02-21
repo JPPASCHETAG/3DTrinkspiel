@@ -15,8 +15,10 @@ ScriptsOnlyBuild:
     - changeModeDown
     - changeModeUp
     - diceRoll
+    - race
     - removePlayer
     - startgame
+    - test
     - testOpenDice
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -34,6 +36,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -78,35 +81,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1864}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 1890}
+      Script: {instanceID: 1886}
     - Class: 114
-      Script: {instanceID: 1914}
+      Script: {instanceID: 1910}
     - Class: 114
-      Script: {instanceID: 1990}
+      Script: {instanceID: 1940}
     - Class: 114
-      Script: {instanceID: 2266}
+      Script: {instanceID: 1988}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2264}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 2936}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 2932}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 2950}
+    - Class: 114
+      Script: {instanceID: 3082}
+    - Class: 114
+      Script: {instanceID: 3118}
     - Class: 114
       Script: {instanceID: 3450}
     - Class: 114
       Script: {instanceID: 3588}
-    - Class: 114
-      Script: {instanceID: 16864}
-    - Class: 114
-      Script: {instanceID: 22826}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -159,25 +162,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1552}
+      Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1864}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 1890}
+      Script: {instanceID: 1886}
     - Class: 114
-      Script: {instanceID: 1914}
+      Script: {instanceID: 1910}
     - Class: 114
-      Script: {instanceID: 2266}
+      Script: {instanceID: 2264}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 2936}
+      Script: {instanceID: 2932}
     - Class: 114
-      Script: {instanceID: 3084}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 3118}
     - Class: 114
       Script: {instanceID: 3450}
     - Class: 114
@@ -187,6 +190,73 @@ ScriptsOnlyBuild:
     - Class: 128
       Script: {instanceID: 0}
     - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/Pferderennen.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1522}
+    - Class: 114
+      Script: {instanceID: 1654}
+    - Class: 114
+      Script: {instanceID: 2108}
+    - Class: 114
+      Script: {instanceID: 2264}
+    - Class: 114
+      Script: {instanceID: 2378}
+    - Class: 114
+      Script: {instanceID: 2684}
+    - Class: 114
+      Script: {instanceID: 2874}
+    - Class: 114
+      Script: {instanceID: 3118}
+    - Class: 114
+      Script: {instanceID: 3188}
+    - Class: 114
+      Script: {instanceID: 3450}
+    - Class: 114
+      Script: {instanceID: 3588}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -242,47 +312,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1716}
+      Script: {instanceID: 1714}
     - Class: 114
-      Script: {instanceID: 1810}
+      Script: {instanceID: 1808}
     - Class: 114
-      Script: {instanceID: 1864}
+      Script: {instanceID: 1860}
     - Class: 114
-      Script: {instanceID: 1914}
+      Script: {instanceID: 1910}
     - Class: 114
-      Script: {instanceID: 2198}
+      Script: {instanceID: 2196}
     - Class: 114
-      Script: {instanceID: 2248}
+      Script: {instanceID: 2246}
     - Class: 114
-      Script: {instanceID: 2266}
+      Script: {instanceID: 2264}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2464}
     - Class: 114
-      Script: {instanceID: 2580}
+      Script: {instanceID: 2578}
+    - Class: 114
+      Script: {instanceID: 2680}
     - Class: 114
       Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 2688}
+      Script: {instanceID: 2732}
     - Class: 114
-      Script: {instanceID: 2736}
+      Script: {instanceID: 2798}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2864}
     - Class: 114
-      Script: {instanceID: 2868}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2926}
     - Class: 114
-      Script: {instanceID: 2930}
+      Script: {instanceID: 3096}
     - Class: 114
-      Script: {instanceID: 3098}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3120}
+      Script: {instanceID: 3178}
     - Class: 114
-      Script: {instanceID: 3180}
+      Script: {instanceID: 3188}
     - Class: 114
-      Script: {instanceID: 3190}
-    - Class: 114
-      Script: {instanceID: 3268}
+      Script: {instanceID: 3266}
     - Class: 114
       Script: {instanceID: 3450}
     - Class: 115
@@ -540,6 +610,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: 31e6450798e3db7ab5c5ba8a22c605d7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ThrowDice
   - hash:
       serializedVersion: 2
       Hash: bd885d9f49777efa37884a753c3b7b03
@@ -830,6 +906,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: c19aefb06191a5c0d8c1fb0cbfab415d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: testOpenDice
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -944,16 +1026,16 @@ ScriptsOnlyBuild:
     className: TextConsoleSimulator
   - hash:
       serializedVersion: 2
+      Hash: 9906608e7bdcacce7cb216bbad11c75f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MoveDiceFinger
+  - hash:
+      serializedVersion: 2
       Hash: cc875b48a9a5c7664e5e107d4fe7fd75
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: removePlayer
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.TestRunner.dll
-    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
-    className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
       Hash: 54e21c755bc66db70c9fcf8dbab0a84e
@@ -984,6 +1066,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Dice
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
+    className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
@@ -1092,27 +1180,10 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: c19aefb06191a5c0d8c1fb0cbfab415d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: testOpenDice
-  - hash:
-      serializedVersion: 2
-      Hash: 9906608e7bdcacce7cb216bbad11c75f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MoveDiceFinger
-  - hash:
-      serializedVersion: 2
-      Hash: 31e6450798e3db7ab5c5ba8a22c605d7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ThrowDice
   platform: 13
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/Map2.unity
   - Assets/Scenes/Map3.unity
+  - Assets/Scenes/Pferderennen.unity
   playerPath: C:/Users/julia/Desktop/Spiel2.apk

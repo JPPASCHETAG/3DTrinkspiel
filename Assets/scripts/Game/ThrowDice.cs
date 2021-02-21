@@ -65,6 +65,7 @@ public class ThrowDice : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Camera.main.transform.position = StaticGameParam.camPos;
 
         PlayerTag1.text = GameSettings.getPlayer1name();
         PlayerTag2.text = GameSettings.getPlayer2name();
@@ -72,7 +73,7 @@ public class ThrowDice : MonoBehaviour
         PlayerTag4.text = GameSettings.getPlayer4name();
 
         TotalPlayers = GameSettings.getNumOfPlayer();
-        currentPlayer = 1;
+        currentPlayer = StaticGameParam.currentPlayer;
 
         objTextMesh = textMeshPro;
 
@@ -81,10 +82,27 @@ public class ThrowDice : MonoBehaviour
         objPlayer3 = player3;
         objPlayer4 = player4;
 
-        Player1Pos = 0;
-        Player2Pos = 0;
-        Player3Pos = 0;
-        Player4Pos = 0;
+        Player1Pos = StaticGameParam.Player1Pos;
+        Player2Pos = StaticGameParam.Player2Pos;
+        Player3Pos = StaticGameParam.Player3Pos;
+        Player4Pos = StaticGameParam.Player4Pos;
+
+        //Die Spielfiguren setzen
+        if(StaticGameParam.MiniGameisLoadedFromGame){
+            if(Player1Pos != 0){
+                objPlayer1.transform.position = getPlayerMovement(Player1Pos).getVector();
+            }
+            if(Player2Pos != 0){
+                objPlayer2.transform.position = getPlayerMovement(Player2Pos).getVector();
+            }
+            if(Player3Pos != 0){
+                objPlayer3.transform.position = getPlayerMovement(Player3Pos).getVector();
+            }
+            if(Player4Pos != 0){
+                objPlayer4.transform.position = getPlayerMovement(Player4Pos).getVector();
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -241,7 +259,6 @@ public class ThrowDice : MonoBehaviour
     void doRoll(int intRolled) {
         
         if(roll){
-            Debug.Log("doRoll erste if");
             roll=false;
 
             GameObject player = null;
@@ -283,7 +300,6 @@ public class ThrowDice : MonoBehaviour
                 aufgabe.blocksRaycasts = false;
                 finishCanvas.alpha = 1;
             }else{
-                Debug.Log("Start Coroutins");
                 StartCoroutine (MoveOverSeconds (oldPos,PlayerPos,player));
                 StartCoroutine (MoveCameraOverSeconds (oldPos,PlayerPos));
             }
@@ -357,9 +373,12 @@ public class ThrowDice : MonoBehaviour
     void nextPlayer(){
         if(currentPlayer < TotalPlayers){
             currentPlayer++;
+            StaticGameParam.currentPlayer++;
         }else{
             currentPlayer = 1;
+            StaticGameParam.currentPlayer = 1;
         }
+        Debug.Log("Player: "+StaticGameParam.currentPlayer);
     }
 
     void showAufgabe(){
@@ -368,7 +387,30 @@ public class ThrowDice : MonoBehaviour
         //Titel und Message setzen
         objTitel.text = aufgaben.getTitel();
         objMessage.text = aufgaben.getMessage();
-
+        if(aufgaben.getMode() == 2){
+            
+            //Find the object you're looking for
+            GameObject tempObject = GameObject.Find("BtnAufgabe");
+            if(tempObject != null){
+                //If we found the object , get the Canvas component from it.
+                Button btnCan = tempObject.GetComponent<Button>();
+                if(btnCan == null){
+                    // Bei Fehler einfach nur Trinken
+                    objTitel.text = "Trink!";
+                    objMessage.text = "Du musst 4 Schluck trinken";
+                }else{
+                    tempObject.GetComponentInChildren<Text>().text = "Minispiel starten";
+                    btnCan.onClick.AddListener( 
+                        delegate { 
+                            Test(); 
+                        }
+                    );
+                }
+            }
+        }else{
+            GameObject BtnAufgabe = GameObject.Find("BtnAufgabe");
+            BtnAufgabe.GetComponentInChildren<Text>().text = "Alles klar weiter gehts!";
+        }
 
         //am Schluss das Canvas zeigen
         aufgabe.alpha = 1;
@@ -380,7 +422,10 @@ public class ThrowDice : MonoBehaviour
         isRolled = false;
         die.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
+    }
 
+    void Test(){
+        Loader.Load(Loader.Scene.Pferderennen);
     }
 
     Movement getPlayerMovement(int field){
