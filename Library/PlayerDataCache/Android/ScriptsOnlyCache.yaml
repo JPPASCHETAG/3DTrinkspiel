@@ -1,9 +1,14 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Billboard_Playertag
     - CanvasAufgabe
+    - Die_d10
+    - Die_d6
     - Einstellungen
     - LowPolyWater.LowPolyWater
+    - ScrollAndPinch
+    - ThrowDice
     - addPlayer
     - changeMapDown
     - changeMapUp
@@ -12,6 +17,7 @@ ScriptsOnlyBuild:
     - diceRoll
     - removePlayer
     - startgame
+    - testOpenDice
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -33,79 +39,9 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/GameScene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1508}
-    - Class: 114
-      Script: {instanceID: 1522}
-    - Class: 114
-      Script: {instanceID: 1852}
-    - Class: 114
-      Script: {instanceID: 1878}
-    - Class: 114
-      Script: {instanceID: 1902}
-    - Class: 114
-      Script: {instanceID: 2248}
-    - Class: 114
-      Script: {instanceID: 2664}
-    - Class: 114
-      Script: {instanceID: 2850}
-    - Class: 114
-      Script: {instanceID: 2906}
-    - Class: 114
-      Script: {instanceID: 3086}
-    - Class: 114
-      Script: {instanceID: 3410}
-    - Class: 114
-      Script: {instanceID: 3548}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 143
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 225
-      Script: {instanceID: 0}
     Assets/Scenes/Map2.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -125,6 +61,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
@@ -136,30 +78,40 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 1852}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1890}
     - Class: 114
-      Script: {instanceID: 1902}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 2248}
+      Script: {instanceID: 1990}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2850}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 2906}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 3086}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3548}
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 3450}
+    - Class: 114
+      Script: {instanceID: 3588}
+    - Class: 114
+      Script: {instanceID: 16864}
+    - Class: 114
+      Script: {instanceID: 22826}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
@@ -207,27 +159,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1550}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 1852}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1890}
     - Class: 114
-      Script: {instanceID: 1902}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 2248}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 2850}
+      Script: {instanceID: 2878}
     - Class: 114
-      Script: {instanceID: 2906}
+      Script: {instanceID: 2936}
     - Class: 114
-      Script: {instanceID: 3086}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3548}
+      Script: {instanceID: 3450}
+    - Class: 114
+      Script: {instanceID: 3588}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -269,49 +223,85 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1852}
+      Script: {instanceID: 1522}
     - Class: 114
-      Script: {instanceID: 1902}
+      Script: {instanceID: 1716}
     - Class: 114
-      Script: {instanceID: 2230}
+      Script: {instanceID: 1810}
     - Class: 114
-      Script: {instanceID: 2558}
+      Script: {instanceID: 1864}
     - Class: 114
-      Script: {instanceID: 2708}
+      Script: {instanceID: 1914}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2198}
     - Class: 114
-      Script: {instanceID: 2840}
+      Script: {instanceID: 2248}
     - Class: 114
-      Script: {instanceID: 3064}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 3146}
+      Script: {instanceID: 2466}
     - Class: 114
-      Script: {instanceID: 3234}
+      Script: {instanceID: 2580}
     - Class: 114
-      Script: {instanceID: 202194}
+      Script: {instanceID: 2684}
     - Class: 114
-      Script: {instanceID: 202202}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 214492}
+      Script: {instanceID: 2736}
     - Class: 114
-      Script: {instanceID: 214494}
+      Script: {instanceID: 2802}
+    - Class: 114
+      Script: {instanceID: 2868}
+    - Class: 114
+      Script: {instanceID: 2878}
+    - Class: 114
+      Script: {instanceID: 2930}
+    - Class: 114
+      Script: {instanceID: 3098}
+    - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 3180}
+    - Class: 114
+      Script: {instanceID: 3190}
+    - Class: 114
+      Script: {instanceID: 3268}
+    - Class: 114
+      Script: {instanceID: 3450}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
@@ -324,7 +314,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 0dedf050e785aa81d4dbcab58f1a6838
+      Hash: a3a7837572db0b39363f013d1eee7766
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: diceRoll
@@ -408,6 +398,18 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 39665e572f20e569f25c23bdcf8cd0b6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: newDiceRoll
+  - hash:
+      serializedVersion: 2
+      Hash: 59eafa69cbee78e200799bbdb8bfa6bd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeModeUp
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -438,6 +440,12 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
+      Hash: c7faad5ded3055716c4bdef4ad735515
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CoinToss
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -454,6 +462,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 65876cdfc62c2be351e3ca8c22725c21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeMapUp
   - hash:
       serializedVersion: 2
       Hash: e6f0efd0e20669d577e9d21526b3d3f9
@@ -486,7 +500,7 @@ ScriptsOnlyBuild:
     className: SimpleScript
   - hash:
       serializedVersion: 2
-      Hash: 88aa0404e03b7e9bde2d7aae0e53c326
+      Hash: c12c692de5b352754b33b55b0af19d21
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CanvasAufgabe
@@ -510,6 +524,12 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
+      Hash: 6f4483d4f9cd6d8ba8f6c860d74fa945
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Die
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -520,6 +540,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: bd885d9f49777efa37884a753c3b7b03
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScrollAndPinch
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -568,6 +594,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 65876cdfc62c2be351e3ca8c22725c21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: changeMapDown
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -636,6 +668,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 6f4483d4f9cd6d8ba8f6c860d74fa945
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Die_d6
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -646,6 +684,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark02
+  - hash:
+      serializedVersion: 2
+      Hash: 5f170942ee57c7a568f5bcfc7521adea
+    assemblyName: UnityEngine.TestRunner.dll
+    namespaceName: UnityEngine.TestTools
+    className: EnumerableTestState
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -678,16 +722,28 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 65876cdfc62c2be351e3ca8c22725c21
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: movement
+    className: changeModeDown
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: movement
+  - hash:
+      serializedVersion: 2
+      Hash: 26bb98148f8a4da1d99ec8f92e804549
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SwipeScript
   - hash:
       serializedVersion: 2
       Hash: ef5c43f921427d03730f6ea4c848f07d
@@ -732,7 +788,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: 37cd053d3b08d1e80a043873e6e15807
+      Hash: 0e1c724b53b3db3d11d21c1e51f7af6a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: startgame
@@ -760,6 +816,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 6f4483d4f9cd6d8ba8f6c860d74fa945
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Die_d10
   - hash:
       serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
@@ -790,6 +852,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
     className: TMP_PhoneNumberValidator
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Billboard_Playertag
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AppDemo
   - hash:
       serializedVersion: 2
       Hash: 5cc439bf63c0539d39588e69465ac2ab
@@ -846,7 +920,7 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
-      Hash: c8c9d8ff54f5e1e108296aa19c108880
+      Hash: a306e12d896ddcca949923c805691027
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField
@@ -898,6 +972,18 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: ObjectSpin
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: objektZiehen
+  - hash:
+      serializedVersion: 2
+      Hash: 43ac932808b139630e5bc941b911b418
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Dice
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
@@ -990,6 +1076,12 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: testMovDice
+  - hash:
+      serializedVersion: 2
       Hash: dd7520b7d4e690e8c593273e7b9fbe80
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1002,32 +1094,25 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 59eafa69cbee78e200799bbdb8bfa6bd
+      Hash: c19aefb06191a5c0d8c1fb0cbfab415d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: changeModeUp
+    className: testOpenDice
   - hash:
       serializedVersion: 2
-      Hash: 65876cdfc62c2be351e3ca8c22725c21
+      Hash: 9906608e7bdcacce7cb216bbad11c75f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: changeModeDown
+    className: MoveDiceFinger
   - hash:
       serializedVersion: 2
-      Hash: 65876cdfc62c2be351e3ca8c22725c21
+      Hash: 31e6450798e3db7ab5c5ba8a22c605d7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: changeMapUp
-  - hash:
-      serializedVersion: 2
-      Hash: 65876cdfc62c2be351e3ca8c22725c21
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: changeMapDown
+    className: ThrowDice
   platform: 13
   scenePathNames:
   - Assets/Scenes/StartScene.unity
-  - Assets/Scenes/GameScene.unity
   - Assets/Scenes/Map2.unity
   - Assets/Scenes/Map3.unity
-  playerPath: C:/Users/julia/Desktop/Spiel.apk
+  playerPath: C:/Users/julia/Desktop/Spiel2.apk

@@ -8,7 +8,7 @@ public class changeMapUp : MonoBehaviour
 {
 	private string[] drinkMode =
 	{
-		"Strand",
+		//"Strand",
 		"Insel"
 	};
 	public TextMeshPro txtDrinkMode;

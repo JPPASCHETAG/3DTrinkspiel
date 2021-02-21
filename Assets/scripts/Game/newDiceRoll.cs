@@ -49,14 +49,16 @@ public class newDiceRoll : MonoBehaviour
 
     public static int rolledNum = 0;
     public static bool isRolled = true;
-
-
+    public static bool canRoll = true;
    
 
     // Start is called before the first frame update
     void Start()
     {
         roll=true;
+        canRoll = true;
+        isRolled = true;
+        rolledNum = 0;
 
         PlayerTag1.text = GameSettings.getPlayer1name();
         PlayerTag2.text = GameSettings.getPlayer2name();
@@ -84,8 +86,9 @@ public class newDiceRoll : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (canRoll && Input.GetMouseButtonDown(0))
         {
+            canRoll = false;
             RollDice();
         }
 
