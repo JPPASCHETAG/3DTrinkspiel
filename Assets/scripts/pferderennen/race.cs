@@ -25,7 +25,7 @@ public class race : MonoBehaviour
     void Update()
     {
         frames++;
-        if(frames%1000 == 0 && !finished){
+        if(frames%100 == 0 && !finished){
             move();
         }
     }
@@ -68,8 +68,17 @@ public class race : MonoBehaviour
             {
                 treppchen.platz1 = true;
                 cavGrp.alpha = 1;
-                string ergebnis = "";
 
+                //Button zum Spiel nur zeigen wenn nicht einzeln geladen
+                if(StaticGameParam.MiniGameisLoadedFromGame){
+                    GameObject tempObject = GameObject.Find("BackToGame");
+                    CanvasGroup canGrp = tempObject.GetComponent<CanvasGroup>();
+                    canGrp.alpha = 1;
+                    canGrp.interactable = true;
+                }
+                
+
+                string ergebnis = "";
 
                 if(playername == treppchen.bet1 && treppchen.player1name != "")
                 {

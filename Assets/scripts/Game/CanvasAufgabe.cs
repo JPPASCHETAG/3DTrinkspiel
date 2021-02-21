@@ -72,6 +72,8 @@ public class CanvasAufgabe : MonoBehaviour
             Camera.main.transform.position = newCamPos;
 
         }
+        //Camera Movement wieder aktivieren
+        ScrollAndPinch.canMove = true;
     }
 
 

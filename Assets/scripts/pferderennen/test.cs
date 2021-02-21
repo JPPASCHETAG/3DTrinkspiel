@@ -116,4 +116,8 @@ public class test : MonoBehaviour
 	{
         Loader.Load(Loader.Scene.Pferderennen);
 	}
+
+    public void backToMainGame(){
+        Loader.Load(Loader.Scene.Map2);
+    }
 }
